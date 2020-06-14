@@ -35,6 +35,8 @@ public class MVVMActivity extends AppCompatActivity {
         setTitle("MVVM Activity");
 
         viewModel = ViewModelProviders.of(this).get(CountriesViewModel.class);
+        viewModel.fetchCountries();
+
 
         list = findViewById(R.id.list);
         retryButton = findViewById(R.id.retryButton);

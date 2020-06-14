@@ -23,7 +23,7 @@ public class CountriesViewModel extends ViewModel {
 
     public CountriesViewModel() {
         service = new CountriesService();
-        fetchCountries();
+        //fetchCountries();
     }
 
     public LiveData<List<String>> getCountries() {
@@ -34,7 +34,7 @@ public class CountriesViewModel extends ViewModel {
         return countryError;
     }
 
-    private void fetchCountries() {
+    public void fetchCountries() {
         service.getCountries()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
